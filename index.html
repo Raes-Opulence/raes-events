@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raes Opulence Events — Crafting Luxury Experiences</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --black: #0a0a0a; --deep: #111111; --card: #161616;
+    --gold: #C9A84C; --gold-light: #E2C97E; --gold-dim: #8a6d2f;
+    --cream: #F5EDD6; --muted: #888888; --border: rgba(201,168,76,0.2);
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--cream); font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 15px; line-height: 1.7; overflow-x: hidden; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 18px 48px; background: rgba(10,10,10,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; letter-spacing: 0.15em; color: var(--gold); text-decoration: none; }
+  .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+  .nav-links a { color: var(--cream); text-decoration: none; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.75; transition: opacity 0.2s, color 0.2s; }
+  .nav-links a:hover { opacity: 1; color: var(--gold); }
+  .nav-cta { background: transparent !important; border: 1px solid var(--gold) !important; color: var(--gold) !important; padding: 8px 22px !important; opacity: 1 !important; transition: all 0.2s !important; }
+  .nav-cta:hover { background: var(--gold) !important; color: var(--black) !important; }
+
+  /* HERO */
+  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 120px 24px 80px; position: relative; overflow: hidden; background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(201,168,76,0.07) 0%, transparent 70%); }
+  .glow-orb { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; animation: breathe 6s ease-in-out infinite; }
+  .glow-orb-1 { width: 300px; height: 300px; background: rgba(201,168,76,0.06); top: 20%; left: 10%; }
+  .glow-orb-2 { width: 200px; height: 200px; background: rgba(201,168,76,0.05); bottom: 25%; right: 12%; animation-delay: 3s; }
+  @keyframes breathe { 0%,100%{opacity:0.6;transform:scale(1);}50%{opacity:1;transform:scale(1.1);} }
+  .hero-eyebrow { font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; animation: fadeUp 0.8s 0.2s both; }
+  .hero-brand { font-family: 'Cormorant Garamond', serif; font-size: clamp(13px,3vw,17px); font-weight: 300; letter-spacing: 0.5em; text-transform: uppercase; color: var(--gold); margin-bottom: 28px; animation: fadeUp 0.8s 0.3s both; }
+  .hero-monogram { font-family: 'Cormorant Garamond', serif; font-size: clamp(90px,16vw,160px); font-weight: 300; line-height: 0.85; color: transparent; -webkit-text-stroke: 1px var(--gold-dim); margin-bottom: 24px; animation: fadeUp 1s 0.4s both; }
+  .hero-monogram span { color: var(--gold); -webkit-text-stroke: 0; }
+  .hero-tagline { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px,5vw,50px); font-weight: 300; font-style: italic; line-height: 1.2; margin-bottom: 14px; animation: fadeUp 0.8s 0.6s both; }
+  .hero-sub { font-size: 11px; letter-spacing: 0.25em; color: var(--muted); text-transform: uppercase; margin-bottom: 48px; animation: fadeUp 0.8s 0.8s both; }
+  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; animation: fadeUp 0.8s 1s both; }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);} }
+
+  /* BUTTONS */
+  .btn-wa { background: #25D366; color: #fff; border: none; padding: 15px 36px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: background 0.2s, transform 0.15s; }
+  .btn-wa:hover { background: #1ebe5d; transform: translateY(-2px); }
+  .btn-outline { background: transparent; color: var(--cream); border: 1px solid rgba(245,237,214,0.35); padding: 15px 36px; font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; display: inline-block; transition: border-color 0.2s, color 0.2s; }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+  .btn-gold { background: var(--gold); color: var(--black); border: none; padding: 15px 36px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.15s; }
+  .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  /* WA ICON */
+  .wa-icon { width: 20px; height: 20px; fill: white; flex-shrink: 0; }
+
+  /* FLOATING WA */
+  .float-wa { position: fixed; bottom: 28px; right: 28px; z-index: 999; background: #25D366; width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.45); text-decoration: none; transition: transform 0.2s; }
+  .float-wa:hover { transform: scale(1.1); }
+  .float-wa svg { width: 28px; height: 28px; fill: white; }
+
+  /* DIVIDER */
+  .divider { display: flex; align-items: center; gap: 14px; justify-content: center; margin: 0 auto 56px; }
+  .divider::before,.divider::after { content:''; flex:1; max-width:70px; height:1px; background:var(--gold-dim); }
+  .diamond { width:6px; height:6px; background:var(--gold); transform:rotate(45deg); }
+
+  /* LAYOUT */
+  .section-wrap { max-width: 1200px; margin: 0 auto; padding: 96px 48px; }
+  .eyebrow { font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); text-align: center; margin-bottom: 14px; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px,5vw,56px); font-weight: 300; text-align: center; line-height: 1.1; margin-bottom: 18px; }
+  .section-title em { font-style: italic; color: var(--gold); }
+  .section-body { font-size: 14px; line-height: 1.9; color: rgba(245,237,214,0.68); text-align: center; max-width: 580px; margin: 0 auto 56px; }
+
+  /* SERVICES */
+  .services-bg { background: var(--black); }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 2px; background: var(--border); }
+  .svc { background: var(--card); padding: 44px 32px; transition: background 0.3s; }
+  .svc:hover { background: #1c1c1c; }
+  .svc-icon { font-size: 26px; margin-bottom: 18px; display: block; }
+  .svc-name { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 600; color: var(--gold); margin-bottom: 6px; }
+  .svc-tag { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; display: block; }
+  .svc-desc { font-size: 13px; line-height: 1.8; color: rgba(245,237,214,0.58); }
+
+  /* ABOUT */
+  .about-bg { background: var(--deep); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .stat { padding: 28px; border: 1px solid var(--border); background: var(--card); }
+  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 6px; }
+  .stat-lbl { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+
+  /* PILLARS */
+  .pillars { display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; margin-top: 56px; }
+  .pillar { text-align: center; padding: 36px 20px; border-top: 1px solid var(--border); }
+  .pillar-num { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 300; -webkit-text-stroke: 1px var(--gold-dim); color: transparent; line-height: 1; margin-bottom: 18px; }
+  .pillar-title { font-family: 'Cormorant Garamond', serif; font-size: 19px; color: var(--cream); margin-bottom: 10px; font-weight: 600; }
+  .pillar-text { font-size: 13px; color: rgba(245,237,214,0.52); line-height: 1.8; }
+
+  /* BOOKING */
+  .booking-bg { background: var(--deep); border-top: 1px solid var(--border); }
+  .booking-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 56px; }
+  .bcard { border: 1px solid var(--border); padding: 36px 28px; text-align: center; background: var(--card); }
+  .bcard-icon { font-size: 32px; margin-bottom: 14px; }
+  .bcard-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--gold); margin-bottom: 10px; }
+  .bcard-desc { font-size: 13px; color: rgba(245,237,214,0.58); line-height: 1.8; margin-bottom: 24px; }
+
+  /* FORM EMBED */
+  .form-wrap { border: 1px solid var(--border); overflow: hidden; margin-bottom: 16px; }
+  .form-wrap iframe { width: 100%; height: 950px; border: none; display: block; }
+
+  /* CONTACT INFO */
+  .contact-row { display: flex; justify-content: center; gap: 48px; margin-top: 56px; flex-wrap: wrap; }
+  .cinfo { text-align: center; }
+  .cinfo-label { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+  .cinfo-val { font-family: 'Cormorant Garamond', serif; font-size: 19px; color: var(--cream); }
+  .cinfo-val a { color: inherit; text-decoration: none; }
+  .cinfo-val a:hover { color: var(--gold); }
+
+  /* FOOTER */
+  footer { background: var(--black); border-top: 1px solid var(--border); padding: 36px 48px; text-align: center; }
+  .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 12px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 10px; }
+  .footer-copy { font-size: 11px; color: var(--muted); }
+
+  /* MOBILE */
+  @media(max-width:768px){
+    nav{padding:16px 20px;}
+    .nav-links{display:none;}
+    .section-wrap{padding:64px 20px;}
+    .about-grid{grid-template-columns:1fr;gap:40px;}
+    .pillars{grid-template-columns:1fr;gap:0;}
+    .booking-cards{grid-template-columns:1fr;}
+    .stats-grid{grid-template-columns:1fr 1fr;}
+    .contact-row{gap:28px;}
+    footer{padding:28px 20px;}
+    .form-wrap iframe{height:1100px;}
+  }
+  @media(prefers-reduced-motion:reduce){.glow-orb{animation:none;}*{animation-duration:0.01ms!important;}}
+</style>
+</head>
+<body>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/254711377440?text=Hello%20Raes%20Opulence%20Events%2C%20I%20would%20like%20to%20enquire%20about%20booking%20an%20event." class="float-wa" target="_blank" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">RO</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#booking" class="nav-cta">Book an Event</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div id="home" class="hero">
+  <div class="glow-orb glow-orb-1"></div>
+  <div class="glow-orb glow-orb-2"></div>
+  <div class="hero-eyebrow">Nairobi, Kenya</div>
+  <div class="hero-brand">Raes Opulence Events</div>
+  <div class="hero-monogram"><span>R</span>O</div>
+  <div class="hero-tagline">Elegance redefined,<br>memories refined.</div>
+  <div class="hero-sub">Crafting Luxury Experiences</div>
+  <div class="hero-btns">
+    <a href="https://wa.me/254711377440?text=Hello%20Raes%20Opulence%20Events%2C%20I%20would%20like%20to%20book%20an%20event." class="btn-wa" target="_blank">
+      <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Book via WhatsApp
+    </a>
+    <a href="#services" class="btn-outline">Our Services</a>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div id="services" class="services-bg">
+  <div class="section-wrap">
+    <div class="eyebrow">What We Do</div>
+    <h2 class="section-title">Every occasion, <em>elevated</em></h2>
+    <p class="section-body">From intimate gatherings to grand celebrations, we bring precision, artistry, and a touch of the extraordinary to every event we touch.</p>
+  </div>
+  <div class="services-grid">
+    <div class="svc"><span class="svc-icon">💍</span><div class="svc-name">Weddings</div><span class="svc-tag">Timeless &amp; Elegant</span><p class="svc-desc">Your love story deserves a stage worthy of it. We craft ceremonies and receptions as unique as your bond.</p></div>
+    <div class="svc"><span class="svc-icon">🏛️</span><div class="svc-name">Corporate Events</div><span class="svc-tag">Professional &amp; Impactful</span><p class="svc-desc">Conferences, product launches, galas, and team retreats executed with sophistication your brand deserves.</p></div>
+    <div class="svc"><span class="svc-icon">✨</span><div class="svc-name">Private Celebrations</div><span class="svc-tag">Intimate &amp; Extraordinary</span><p class="svc-desc">Baby showers, anniversaries, graduations — every milestone made extraordinary.</p></div>
+    <div class="svc"><span class="svc-icon">🎂</span><div class="svc-name">Birthdays</div><span class="svc-tag">Memorable &amp; Personalised</span><p class="svc-desc">From milestone 18ths and 50ths to themed parties — celebrations guests talk about for years.</p></div>
+    <div class="svc"><span class="svc-icon">💐</span><div class="svc-name">Proposals</div><span class="svc-tag">Exquisite &amp; Romantic</span><p class="svc-desc">Bespoke proposal experiences — sunset setups, private dinners — so the answer is never in doubt.</p></div>
+    <div class="svc"><span class="svc-icon">🌿</span><div class="svc-name">Event Styling</div><span class="svc-tag">Details That Define Luxury</span><p class="svc-desc">Florals, décor, lighting, tablescapes. We transform spaces into immersive environments.</p></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="about-bg">
+  <div class="section-wrap">
+    <div class="about-grid">
+      <div>
+        <div class="eyebrow" style="text-align:left;">Who We Are</div>
+        <h2 class="section-title" style="text-align:left;">Luxury is in <em>the detail</em></h2>
+        <p class="section-body" style="text-align:left;margin-left:0;">Raes Opulence Events is a Nairobi-based luxury event planning and styling house. We believe every gathering has the potential to become an unforgettable experience.</p>
+        <p class="section-body" style="text-align:left;margin-left:0;margin-top:-32px;">We bring a curatorial eye to every brief — meticulously sourcing décor, coordinating vendors, and managing every detail so you can simply be present in your moment.</p>
+        <a href="#booking" class="btn-gold" style="margin-top:8px;">Plan with Us</a>
+      </div>
+      <div class="stats-grid">
+        <div class="stat"><div class="stat-num">100%</div><div class="stat-lbl">Client Satisfaction</div></div>
+        <div class="stat"><div class="stat-num">6+</div><div class="stat-lbl">Event Types</div></div>
+        <div class="stat"><div class="stat-num">NBO</div><div class="stat-lbl">Based in Nairobi</div></div>
+        <div class="stat"><div class="stat-num">∞</div><div class="stat-lbl">Possibilities</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<div style="background:var(--black);">
+  <div class="section-wrap">
+    <div class="eyebrow">Our Promise</div>
+    <h2 class="section-title">Why choose <em>Raes Opulence</em></h2>
+    <div class="pillars">
+      <div class="pillar"><div class="pillar-num">I</div><div class="pillar-title">Bespoke by Design</div><p class="pillar-text">Every package designed around your vision, your budget, and your story — never off a shelf.</p></div>
+      <div class="pillar"><div class="pillar-num">II</div><div class="pillar-title">Flawless Execution</div><p class="pillar-text">From first consultation to final farewell, we manage every moving part so nothing falls through the cracks.</p></div>
+      <div class="pillar"><div class="pillar-num">III</div><div class="pillar-title">Opulent Aesthetics</div><p class="pillar-text">We curate environments — every element chosen with an eye for beauty and lasting impression.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- BOOKING -->
+<div id="booking" class="booking-bg">
+  <div class="section-wrap">
+    <div class="eyebrow">Get in Touch</div>
+    <h2 class="section-title">Let's create something <em>extraordinary</em></h2>
+    <p class="section-body">Chat with us on WhatsApp for a quick response, or fill in the form and we'll get back to you within 24 hours.</p>
+
+    <div class="divider"><div class="diamond"></div></div>
+
+    <div class="booking-cards">
+      <div class="bcard">
+        <div class="bcard-icon">💬</div>
+        <div class="bcard-title">WhatsApp Us</div>
+        <p class="bcard-desc">Fastest way to reach us. Chat directly, share your vision, and get an instant response.</p>
+        <a href="https://wa.me/254711377440?text=Hello%20Raes%20Opulence%20Events%2C%20I%20would%20like%20to%20enquire%20about%20booking%20an%20event." class="btn-wa" target="_blank">
+          <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+      <div class="bcard">
+        <div class="bcard-icon">📋</div>
+        <div class="bcard-title">Booking Form</div>
+        <p class="bcard-desc">Leave your details below and we'll call you back to start planning your perfect event.</p>
+        <a href="#google-form" class="btn-outline">Fill the Form ↓</a>
+      </div>
+    </div>
+
+    <!-- GOOGLE FORM -->
+    <div id="google-form">
+      <div class="eyebrow" style="margin-bottom:24px;">Booking Enquiry Form</div>
+      <div class="form-wrap">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfVVM987RPgHziHRch4Iq6nzsvOBm_csdgmbI4XyKbGZ2mmuQ/viewform?embedded=true" title="Raes Opulence Events Booking Form">Loading…</iframe>
+      </div>
+      <p style="font-size:12px;color:var(--muted);text-align:center;margin-top:14px;letter-spacing:0.08em;">Form not loading? <a href="https://wa.me/254711377440" style="color:var(--gold);">WhatsApp us instead</a>.</p>
+    </div>
+
+    <div class="contact-row">
+      <div class="cinfo"><div class="cinfo-label">Call or WhatsApp</div><div class="cinfo-val"><a href="tel:+254711377440">0711 377 440</a></div></div>
+      <div class="cinfo"><div class="cinfo-label">Alternative</div><div class="cinfo-val"><a href="tel:+254795816039">0795 816 039</a></div></div>
+      <div class="cinfo"><div class="cinfo-label">Email</div><div class="cinfo-val"><a href="mailto:estandirangu99@gmail.com">estandirangu99@gmail.com</a></div></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-name">Raes Opulence Events &mdash; Nairobi</div>
+  <div class="footer-copy">Elegance redefined, memories refined. &copy; 2026</div>
+</footer>
+
+</body>
+</html>
